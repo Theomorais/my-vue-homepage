@@ -1,0 +1,20 @@
+nav {
+    background-color: var(--main-dark);
+    padding: 0.5rem;
+    display: flex;
+}
+
+.nav-element{
+    margin-right: 1vw;
+}
+
+.nav-element a{
+    color: var(--main-light);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.nav-element a.router-link-exact-active {
+    color: var(--main-color);
+    transition: var(--transition);
+}

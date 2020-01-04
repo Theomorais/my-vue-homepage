@@ -1,0 +1,87 @@
+:root{
+    /* app colors */
+    --main-dark: #333;
+    --main-light: #fafafa;
+    --main-color: rgb(41, 155, 41);
+    --light-highlight: white;
+    --dark-highlight: black;
+    --shadow-color: rgba(0, 0, 0, 0.75);
+
+    /* shadows */
+    --btn-shadow: 2px 1px 1px 0px var(--shadow-color);
+
+    /* transitions and animations  */
+    /* transition timing*/
+    --tt: 100ms;
+    /* my default transition */
+    --transition: color var(--tt), background-color var(--tt), border var(--tt), box-shadow var(--tt);
+}
+
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+}
+
+html {
+  color: var(--main-dark);
+  background-color: var(--main-light);
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/* buttons */
+.btn {
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.btn:hover, .btn:active  {
+  box-shadow: var(--btn-shadow);
+  transition: var(--transition);
+}
+
+.btn-primary {
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+  background-color: var(--light-highlight);
+}
+
+.btn-primary:hover, .btn-primary:active  {
+  color: var(--light-highlight);
+  border: 1px solid var(--main-color);
+  background-color: var(--main-color);
+}
+
+.btn-secondary {
+  color: var(--main-dark);
+  border: 1px solid var(--main-dark);
+  background-color: var(--light-highlight);
+}
+
+.btn-secondary:hover, .btn-secondary:active  {
+  color: var(--light-highlight);
+  border: 1px solid var(--main-dark);
+  background-color: var(--main-dark);
+}
+
+/* inputs */
+input.form-control {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--main-color);
+  border-radius: 3px;
+  background-color: var(--light-highlight);
+  color: var(--dark-highlight);
+  transition: var(--transition);
+}
+
+input.form-control:focus, input.form-control:hover {
+  box-shadow: var(--btn-shadow);
+  transition: var(--transition);
+}
