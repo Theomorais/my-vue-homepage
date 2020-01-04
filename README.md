@@ -1,4 +1,4 @@
-# my-hoempage
+# My homepage in VueJs
 
 ## Project setup
 ```
