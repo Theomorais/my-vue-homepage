@@ -1,7 +1,7 @@
 <template>
   <div class="todo-list">
     <div class="todo-elements-list">
-      <template v-for="(todo, index) in getTodos">
+      <template v-for="(todo, index) in todoList">
         <TodoElement :key="index" :index="index" :todo="{...todo}"/>
       </template>
     </div>
@@ -29,14 +29,17 @@ import TodoElement from './TodoElement.vue';
 import '@/assets/todo.css';
 
 /**
- * @todo: made list order modifiable
  * @todo: adding filters for the list
  */
 export default {
   data() {
     return {
       newTodoText: '',
+      todoList: [],
     };
+  },
+  mounted() {
+    this.todoList = [...this.getTodos];
   },
   methods: {
     ...mapActions(['newTodo']),
@@ -48,10 +51,15 @@ export default {
     },
   },
   computed: {
-    ...mapGetters(['getTodos']),
+    ...mapGetters(['getTodos', 'getRefreshTick']),
   },
   components: {
     TodoElement,
+  },
+  watch: {
+    getRefreshTick() {
+      this.todoList = [...this.getTodos];
+    },
   },
 };
 </script>

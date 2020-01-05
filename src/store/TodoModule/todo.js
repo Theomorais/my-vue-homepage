@@ -8,10 +8,12 @@
  */
 const state = {
   aTodos: [],
+  refreshTick: false,
 };
 
 const getters = {
   getTodos: paramState => paramState.aTodos,
+  getRefreshTick: paramState => paramState.refreshTick,
 };
 
 const mutations = {
@@ -26,6 +28,22 @@ const mutations = {
       paramState.aTodos[indexToChange].done = !paramState.aTodos[indexToChange].done;
     } else {
       console.error(`Unable to find index: ${indexToChange} in aTodos`);
+    }
+  },
+  UP_TODO(paramState, indexToChange) {
+    if (indexToChange > 0 && indexToChange < paramState.aTodos.length) {
+      const tmpTodo = paramState.aTodos[indexToChange - 1];
+      paramState.aTodos[indexToChange - 1] = paramState.aTodos[indexToChange];
+      paramState.aTodos[indexToChange] = tmpTodo;
+      paramState.refreshTick = !paramState.refreshTick;
+    }
+  },
+  DOWN_TODO(paramState, indexToChange) {
+    if (indexToChange >= 0 && indexToChange < paramState.aTodos.length - 1) {
+      const tmpTodo = paramState.aTodos[indexToChange + 1];
+      paramState.aTodos[indexToChange + 1] = paramState.aTodos[indexToChange];
+      paramState.aTodos[indexToChange] = tmpTodo;
+      paramState.refreshTick = !paramState.refreshTick;
     }
   },
   /**
@@ -55,6 +73,12 @@ const actions = {
   },
   changeTodo(paramStore, oItem) {
     paramStore.commit('EDIT_TODO', oItem);
+  },
+  upTodoElement(paramStore, indexToChange) {
+    paramStore.commit('UP_TODO', indexToChange);
+  },
+  downTodoElement(paramStore, indexToChange) {
+    paramStore.commit('DOWN_TODO', indexToChange);
   },
 };
 

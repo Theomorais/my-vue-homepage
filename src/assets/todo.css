@@ -6,3 +6,15 @@
     margin-left: 0.5vw;
     cursor: pointer;
 }
+
+.todo-elements-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.todo-element {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
