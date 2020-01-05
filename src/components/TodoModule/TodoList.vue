@@ -11,6 +11,7 @@
         class="form-control"
         v-model="newTodoText"
         placeholder="New Todo"
+        @keyup.enter="createNewTodo()"
       >
       <button
         class="btn btn-primary"
@@ -28,8 +29,8 @@ import TodoElement from './TodoElement.vue';
 import '@/assets/todo.css';
 
 /**
- * @todo: Add store persist
  * @todo: made list order modifiable
+ * @todo: adding filters for the list
  */
 export default {
   data() {

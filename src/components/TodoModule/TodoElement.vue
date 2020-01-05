@@ -3,6 +3,7 @@
     <template v-if="editable === false">
       <input
         :id="`todo-${index}`"
+        class="form-control"
         type="checkbox"
         @click="doneUndoneTodo(index)"
         :checked="todo.done"
@@ -12,7 +13,12 @@
       <i @click="editable = true" class="todo-icon fa fa-pencil"></i>
     </template>
     <template v-else>
-      <input type="text" v-model="tmpText"/>
+      <input
+        type="text"
+        class="form-control"
+        v-model="tmpText"
+        @keyup.enter="handleChange()"
+      />
       <i @click="handleChange()" class="todo-icon fa fa-check"></i>
       <i @click="editable = false" class="todo-icon fa fa-times"></i>
     </template>
