@@ -2,6 +2,7 @@ nav {
     background-color: var(--main-dark);
     padding: 0.5rem;
     display: flex;
+    box-shadow: var(--navbar-shadow);
 }
 
 .nav-element{

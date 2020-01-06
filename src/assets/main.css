@@ -8,7 +8,8 @@
     --shadow-color: rgba(0, 0, 0, 0.75);
 
     /* shadows */
-    --btn-shadow: 2px 1px 1px 0px var(--shadow-color);
+    --btn-shadow: 2px 1px 5px 0px var(--shadow-color);
+    --navbar-shadow: 0px 2px 5px 2px var(--shadow-color);
 
     /* transitions and animations  */
     /* transition timing*/
@@ -47,12 +48,18 @@ body {
   transition: var(--transition);
 }
 
-.btn-primary {
+.btn-round {
+  border-radius: 50%;
+}
+
+.btn-primary,
+.btn-main:hover, .btn-main:active {
   color: var(--main-color);
   border: 1px solid var(--main-color);
   background-color: var(--light-highlight);
 }
 
+.btn-main,
 .btn-primary:hover, .btn-primary:active  {
   color: var(--light-highlight);
   border: 1px solid var(--main-color);
@@ -65,12 +72,12 @@ body {
   background-color: var(--light-highlight);
 }
 
-.btn-secondary:hover, .btn-secondary:active  {
+.btn-secondary:hover, .btn-secondary:active {
   color: var(--light-highlight);
   border: 1px solid var(--main-dark);
   background-color: var(--main-dark);
 }
-
+/* end buttons */
 /* inputs */
 input.form-control {
   padding: 0.25rem 0.5rem;
@@ -85,3 +92,4 @@ input.form-control:focus, input.form-control:hover {
   box-shadow: var(--btn-shadow);
   transition: var(--transition);
 }
+/* end inputs */

@@ -1,10 +1,17 @@
 <template>
-  <div class="home"></div>
+  <div class="home">
+    <Board />
+  </div>
 </template>
 
 <script>
+import Board from '@/components/Board.vue';
+import '@/assets/board.css';
+
 export default {
-  name: 'home',
-  components: {},
+  name: 'Home',
+  components: {
+    Board,
+  },
 };
 </script>

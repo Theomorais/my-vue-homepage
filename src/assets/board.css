@@ -1,0 +1,68 @@
+/* AddTool Component */
+.btn-close {
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    padding: 0.2rem;
+}
+
+.floating-box {
+    min-width: 11rem;
+    width: 50vw;
+    position: fixed;
+    box-shadow: var(--btn-shadow);
+    z-index: 10;
+    top: 10vh;
+    left: 25vw;
+}
+
+.tool-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-around;
+}
+
+.tool-block {
+    flex: 1;
+    cursor: pointer;
+
+    color: var(--dark-highlight);
+    background-color: var(--light-highlight);
+    border: 1px solid var(--dark-highlight);
+    border-radius: 3px;
+    font-size: 1.5rem;
+
+    min-width: 10rem;
+    padding: 1vh 1vw;
+    margin: 1vh 1vw;
+
+    transition: var(--transition);
+}
+
+.tool-block:hover {
+    color: var(--main-color);
+    border: 1px solid var(--main-color);
+    transition: var(--transition);
+    box-shadow: var(--btn-shadow);
+}
+
+
+/* end AddTool Component */
+/* floating btn */
+.floating-btn {
+    position: fixed;
+    bottom: 1vh;
+    right: 1vw;
+}
+
+.btn-icon {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    padding: 0;
+    line-height: 100%;
+    font-size: 2rem;
+    font-weight: bold;
+}
+/* end floating btn */

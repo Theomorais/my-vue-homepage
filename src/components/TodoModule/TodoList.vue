@@ -60,6 +60,9 @@ export default {
     getRefreshTick() {
       this.todoList = [...this.getTodos];
     },
+    getTodos(newTodos) {
+      this.todoList = [...newTodos];
+    },
   },
 };
 </script>
